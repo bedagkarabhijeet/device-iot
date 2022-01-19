@@ -1,4 +1,6 @@
 
+from DataAccess.device_data_access import DeviceDataAccess
+
 
 class UOW:
     """
@@ -7,5 +9,5 @@ class UOW:
     def __init__(self, cursor):
         self.__cursor = cursor
 
-    def get_event_detection_data_access(self):
-        return EventDetectionDataAccess(self.__cursor)
+    def device_access_data_access(self):
+        return DeviceDataAccess(self.__cursor)

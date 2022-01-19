@@ -1,0 +1,4 @@
+{
+  "connection_string": "dbname=suppliers user=postgres password=postgres",
+  "port": 5000
+}
