@@ -1,4 +1,8 @@
 {
-  "connection_string": "dbname=suppliers user=postgres password=postgres",
-  "port": 5000
+    "dbname": "postgres",
+    "user": "postgres",
+    "host": "localhost",
+    "password": "admin",
+    "port": "5432",
+    "schema": "public"
 }
