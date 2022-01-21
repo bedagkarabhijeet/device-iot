@@ -20,10 +20,10 @@ Python 3.8
 
 3. Open command prompt, navigate to app folder and run below command
 
-    #####pip install -r requirements.txt
+    ##### pip install -r requirements.txt
 4. Open command prompt and run below command
 
-    #####uvicorn startup:app
+    ##### uvicorn startup:app
 
 # API documentation
 
