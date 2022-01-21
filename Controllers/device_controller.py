@@ -1,6 +1,6 @@
 import uuid
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 
 from DataAccess.uow_manager import UOWManager
 
@@ -13,11 +13,12 @@ from BusinessLogic.device_bl import DeviceBL
 
 
 from initializer import logger
+from Utilities.Security.security import validate_token
 
 device_route = APIRouter()
 
 
-@device_route.post("/")
+@device_route.post("/", dependencies=[Depends(validate_token)])
 def device(device_model: CreateDevice):
     """
     Create new Device in the system
@@ -52,7 +53,7 @@ def device(device_model: CreateDevice):
                                                     "This has been recorded and our team is working on it")
 
 
-@device_route.patch("/{device_hardware_id}")
+@device_route.patch("/{device_hardware_id}", dependencies=[Depends(validate_token)])
 def device(device_hardware_id, device_model: UpdateDeviceName):
     """
     Updates device name
@@ -74,7 +75,7 @@ def device(device_hardware_id, device_model: UpdateDeviceName):
                                                     "This has been recorded and our team is working on it")
 
 
-@device_route.get("/")
+@device_route.get("/", dependencies=[Depends(validate_token)])
 def device():
     """
     Gets all devices in the system
