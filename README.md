@@ -14,9 +14,9 @@ Python 3.8
 
 2. Created and activate virtual environment using below command
 
-    #####python -m venv venv
+    ##### python -m venv venv
     
-    #####venv\Scripts\activate
+    ##### venv\Scripts\activate
 
 3. Open command prompt, navigate to app folder and run below command
 
