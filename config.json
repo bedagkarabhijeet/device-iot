@@ -1,8 +1,8 @@
 {
-    "dbname": "postgres",
-    "user": "postgres",
-    "host": "localhost",
-    "password": "admin",
-    "port": "5432",
-    "schema": "public"
+    "dbname": "XXXXXXXXXXXXXXXXXX",
+    "user": "XXXXXXXXXXXXXXXXXX",
+    "host": "XXXXXXXXXXXXXXXXXX",
+    "password": "XXXXXXXXXXXXXXXXXX",
+    "port": "XXXXXXXXXXXXXXXXXX",
+    "schema": "XXXXXXXXXXXXXXXXXX",
 }
