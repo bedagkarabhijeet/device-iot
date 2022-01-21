@@ -14,7 +14,9 @@ Python 3.8
    https://github.com/bedagkarabhijeet/device-iot.git
 
 
-2. Navigat to checkout location and from command prompt created and activate virtual environment using below command
+2. Update the config.json. If you are working on new DB use SQL script from Utilities\DBScripts\1642582742.sql to create table schema
+
+4. Navigate to checkout location and from command prompt create and activate virtual environment using below command
 
     ##### python -m venv venv
     
@@ -23,7 +25,7 @@ Python 3.8
 3. Open command prompt, navigate to checkout folder and run below command
 
     ##### pip install -r requirements.txt
-4. Open command prompt,  navigate to checkout folder and run below command. This run the app
+4. Open command prompt,  navigate to checkout folder and run below command. This runs the app
 
     ##### uvicorn startup:app
 
