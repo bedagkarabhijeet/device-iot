@@ -7,7 +7,7 @@ from DataAccess.uow_manager import UOWManager
 from Exceptions.device_exception import DeviceException, DeviceExceptionTypes
 from Models.Requests.device import CreateDevice, UpdateDeviceName
 from Models.Responses.device import CreateDevice as DeviceResponse, GetDevice
-from Models.Requests.sensor import ReadSensor as SensorRequest, SensorTypes
+from Models.Requests.sensor import CreateSensorRequest, SensorTypes
 
 from BusinessLogic.device_bl import DeviceBL
 
@@ -27,17 +27,17 @@ def device(device_model: CreateDevice):
         device_bl = DeviceBL(UOWManager, logger)
         device_data = device_bl.add(device_model,
                                     [
-                                        SensorRequest.parse_obj(
+                                        CreateSensorRequest.parse_obj(
                                             {
                                                 "name": "tempormeter",
                                                 "hardware_id": str(uuid.uuid4()),
-                                                "type": SensorTypes.Temperature
+                                                "type": SensorTypes.Temperature.value
                                             }),
-                                        SensorRequest.parse_obj(
+                                        CreateSensorRequest.parse_obj(
                                             {
                                                 "name": "pressorometer",
                                                 "hardware_id": str(uuid.uuid4()),
-                                                "type": SensorTypes.Pressure
+                                                "type": SensorTypes.Pressure.value
                                             })
                                     ])
         logger.info(f"Device {device_model.hardware_id} added successfully")
@@ -53,16 +53,16 @@ def device(device_model: CreateDevice):
 
 
 @device_route.patch("/{device_hardware_id}")
-def device(hardware_id, device_model: UpdateDeviceName):
+def device(device_hardware_id, device_model: UpdateDeviceName):
     """
     Updates device name
     """
 
     try:
         device_bl = DeviceBL(UOWManager, logger)
-        device_model.hardware_id = hardware_id
+        device_model.hardware_id = device_hardware_id
         device_bl.update_device(device_model)
-        logger.info(f"Device {hardware_id} updated successfully")
+        logger.info(f"Device {device_hardware_id} updated successfully")
         return device_model
     except DeviceException as de:
         logger.error(f"Failed in adding new device {de}")

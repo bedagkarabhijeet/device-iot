@@ -7,10 +7,10 @@ class SensorTypes(enum.Enum):
     Pressure = "Pressure"
 
 
-class ReadSensor(BaseModel):
-    sensor_type: str
-    sensor_name: SensorTypes
-    sensor_hardware_id: UUID4
+class CreateSensorRequest(BaseModel):
+    type: SensorTypes
+    name: str
+    hardware_id: UUID4
 
 
 class SensorAddEventModel(BaseModel):

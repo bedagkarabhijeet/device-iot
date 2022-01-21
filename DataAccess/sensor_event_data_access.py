@@ -5,6 +5,13 @@ class SensorEventDataAccess:
         self.__cursor = cursor
 
     def insert(self, sensor_id, value, timestamp):
+        """
+        Insert new sensor events
+        :param sensor_id: Id of the sensor
+        :param value: Value
+        :param timestamp: Timestamp in epoch format
+        :return: Id of sensor
+        """
         sql_query = "INSERT INTO sensor_events (sensor_id, sensor_value, time_stamp) " \
                     "VALUES (%s, %s, %s) RETURNING sensor_id"
 
@@ -18,7 +25,13 @@ class SensorEventDataAccess:
             raise Exception("Failed while inserting record")
 
     def get_events(self, hardware_id, start_time=0, end_time=0):
-
+        """
+        Get all the events for sensor
+        :param hardware_id: If of the sensor
+        :param start_time: Optional in epoch format
+        :param end_time: Optional in epoch format
+        :return: Event list
+        """
         params = [str(hardware_id)]
         sql_query = "SELECT S.sensor_hardware_id, SE.time_stamp, SE.sensor_value " \
                     "FROM sensor S inner join sensor_events SE ON S.sensor_id = SE.sensor_id " \
