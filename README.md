@@ -1,5 +1,5 @@
 
-# shortener
+# DeviceIOT
 ## About The Project
 DeviceIOT is used to add IOT devices it's associated sensors and push events to the sensors
 
@@ -15,6 +15,7 @@ Python 3.8
 2. Created and activate virtual environment using below command
 
     #####python -m venv venv
+    
     #####venv\Scripts\activate
 
 3. Open command prompt, navigate to app folder and run below command
