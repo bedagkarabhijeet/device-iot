@@ -9,7 +9,7 @@ Python 3.8
 # Run Locally
 
 ### Installation steps
-1. Checkout below mentioned repo on local
+1. Checkout below mentioned repo on local.
 
    https://github.com/bedagkarabhijeet/device-iot.git
 
@@ -20,10 +20,10 @@ Python 3.8
     
     ##### venv\Scripts\activate
 
-3. Open command prompt, navigate to app folder and run below command
+3. Open command prompt, navigate to checkout folder and run below command
 
     ##### pip install -r requirements.txt
-4. Open command prompt and run below command
+4. Open command prompt,  navigate to checkout folder and run below command. This run the app
 
     ##### uvicorn startup:app
 
