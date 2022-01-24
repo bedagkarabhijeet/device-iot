@@ -5,6 +5,7 @@ DeviceIOT is used to add IOT devices it's associated sensors and push events to 
 
 ### Prerequisites
 Python 3.8
+PostgreSQL with DB scheama (Initial SQL script attached in the code)
 
 # Run Locally
 
