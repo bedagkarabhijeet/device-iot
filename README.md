@@ -5,25 +5,28 @@ DeviceIOT is used to add IOT devices it's associated sensors and push events to 
 
 ### Prerequisites
 Python 3.8
+PostgreSQL with DB scheama (Initial SQL script attached in the code)
 
 # Run Locally
 
 ### Installation steps
-1. Checkout below mentioned repo on local
+1. Checkout below mentioned repo on local.
 
    https://github.com/bedagkarabhijeet/device-iot.git
 
 
-2. Navigat to checkout location and from command prompt created and activate virtual environment using below command
+2. Update the config.json. If you are working on new DB use SQL script from Utilities\DBScripts\1642582742.sql to create table schema
+
+4. Navigate to checkout location and from command prompt create and activate virtual environment using below command
 
     ##### python -m venv venv
     
     ##### venv\Scripts\activate
 
-3. Open command prompt, navigate to app folder and run below command
+3. Open command prompt, navigate to checkout folder and run below command
 
     ##### pip install -r requirements.txt
-4. Open command prompt and run below command
+4. Open command prompt,  navigate to checkout folder and run below command. This runs the app
 
     ##### uvicorn startup:app
 
