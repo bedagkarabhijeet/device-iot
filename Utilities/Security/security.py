@@ -14,7 +14,8 @@ bearer_token = HTTPBearer(scheme_name='Authorization')
 
 def validate_token(http_authorization_credentials=Depends(bearer_token)):
     """
-    Decode JWT token to get username =&gt; return username
+    Decode JWT token to get username
+    return username
     """
     try:
         payload = jwt.decode(http_authorization_credentials.credentials, configuration["SECRET_KEY"],
